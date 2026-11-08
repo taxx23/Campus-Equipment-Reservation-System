@@ -1,94 +1,94 @@
-# Campus Equipment Reservation System
+Campus Equipment Reservation System
 
-# 
 
-# Project Description
 
-# The Campus Equipment Reservation System is a Java-based web application developed to allow university students and faculty members to submit equipment reservation requests.
+Project Description
 
-# 
+The Campus Equipment Reservation System is a Java-based web application developed to allow university students and faculty members to submit equipment reservation requests.
 
-# Users can select the equipment category, specify the quantity and booking duration, and view their booking receipt after submitting the form.
 
-# 
 
-# Technologies Used
+Users can select the equipment category, specify the quantity and booking duration, and view their booking receipt after submitting the form.
 
-# \- Frontend: HTML5 and CSS3
 
-# \- Backend: Java Servlets
 
-# \- Database: MySQL
+Technologies Used
 
-# \- Database Connectivity: JDBC
+\- Frontend: HTML5 and CSS3
 
-# \- Server: Apache Tomcat
+\- Backend: Java Servlets
 
-# \- Development Environment: Apache NetBeans
+\- Database: MySQL
 
-# 
+\- Database Connectivity: JDBC
 
-# Main Features
+\- Server: Apache Tomcat
 
-# \- Equipment reservation form for students and faculty.
+\- Development Environment: Apache NetBeans
 
-# \- Equipment categories: Laptop, Projector, and Study Pod.
 
-# \- Automatic calculation of booking costs.
 
-# \- 15% discount for faculty members.
+Main Features
 
-# \- Input validation and error handling.
+\- Equipment reservation form for students and faculty.
 
-# \- Storage of reservation records in the MySQL database.
+\- Equipment categories: Laptop, Projector, and Study Pod.
 
-# \- Booking receipt displaying reservation details and total cost.
+\- Automatic calculation of booking costs.
 
-# 
+\- 15% discount for faculty members.
 
-# Database
+\- Input validation and error handling.
 
-# The project uses a database named campus\_facility\_db with a reservations table.
+\- Storage of reservation records in the MySQL database.
 
-# 
+\- Booking receipt displaying reservation details and total cost.
 
-# The Database SQL Package folder contains:
 
-# \- schema.sql: Creates the database and reservations table.
 
-# \- data.sql: Inserts sample reservation records.
+Database
 
-# 
+The project uses a database named campus\_facility\_db with a reservations table.
 
-# How to Run the Project
 
-# 1\. Open the project in Apache NetBeans.
 
-# 2\. Make sure MySQL/MariaDB is running.
+The Database SQL Package folder contains:
 
-# 3\. Create the database by executing schema.sql.
+\- schema.sql: Creates the database and reservations table.
 
-# 4\. Ensure the MySQL JDBC driver dependency is available through Maven.
+\- data.sql: Inserts sample reservation records.
 
-# 5\. Configure the database connection details in ReservationServlet.java if necessary.
 
-# 6\. Run the project using Apache Tomcat.
 
-# 7\. Open the booking form and submit a reservation.
+How to Run the Project
 
-# 
+1\. Open the project in Apache NetBeans.
 
-# Project Structure
+2\. Make sure MySQL/MariaDB is running.
 
-# \- src – Java Servlet source code.
+3\. Create the database by executing schema.sql.
 
-# \- Web Pages – HTML booking form and web resources.
+4\. Ensure the MySQL JDBC driver dependency is available through Maven.
 
-# \- Database SQL Package – SQL database scripts.
+5\. Configure the database connection details in ReservationServlet.java if necessary.
 
-# 
+6\. Run the project using Apache Tomcat.
 
-# Academic Project
+7\. Open the booking form and submit a reservation.
 
-# Developed as part of a university Web Technologies group assignment.
+
+
+Project Structure
+
+\- src: Java Servlet source code.
+
+\- Web Pages: HTML booking form and web resources.
+
+\- Database SQL Package: SQL database scripts.
+
+
+
+Academic Project
+
+Developed as part of a university Web Technologies group assignment.
 
