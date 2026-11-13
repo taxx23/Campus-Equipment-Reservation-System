@@ -1,4 +1,4 @@
-CREATE DATABASE campus_facility_db;
+CREATE DATABASE IF NOT EXISTS campus_facility_db;
 USE campus_facility_db;
 
 CREATE TABLE reservations (

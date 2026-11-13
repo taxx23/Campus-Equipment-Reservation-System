@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
 @WebServlet(name = "ReservationServlet", urlPatterns = {"/ReservationServlet"})
@@ -24,9 +23,9 @@ public class ReservationServlet extends HttpServlet {
     String quantityStr = request.getParameter("quantity");
     String bookingDaysStr = request.getParameter("bookingDays");
     
-    PrintWriter out = response.getWriter();
     response.setContentType("text/html;charset=UTF-8");
-    
+    PrintWriter out = response.getWriter();
+        
     if (userName == null || userName.trim().isEmpty() ||
         userRole == null || userRole.trim().isEmpty() ||
         itemCategory == null || itemCategory.trim().isEmpty() ||
@@ -37,7 +36,7 @@ public class ReservationServlet extends HttpServlet {
         out.println("<br><a href='booking_form.html' style='color: #985c45;'>Try again</a>");
         return;
     }
-
+    
     userName = userName.trim().toUpperCase();
     userRole = userRole.trim();
     itemCategory = itemCategory.trim();
@@ -53,7 +52,19 @@ public class ReservationServlet extends HttpServlet {
         out.println("<br><a href='booking_form.html' style='color: #985c45;'>Try again</a>");
         return;
     }
-
+    
+    if (bookingDays <= 0 || quantity <= 0) {
+        out.println("Booking days and Quantity must be at least one.");
+        out.println("<br><a href='booking_form.html' style='color: #985c45;'>Try again</a>");
+        return;
+    }
+    
+    if (bookingDays > 90) {
+        out.println("Booking days acannot exceed 90 days.");
+        out.println("<br><a href='booking_form.html' style='color: #985c45;'>Try again</a>");
+        return;
+    }
+    
     double dailyRate;
 
     switch (itemCategory) {
@@ -132,9 +143,13 @@ public class ReservationServlet extends HttpServlet {
         out.println("<p><b>Subtotal:</b> AED " + subtotal + "</p>");
         
         if (userRole.equals("Faculty")) {
-            out.println("<p><b>Faculty Discount:</b> 15%</p>");
+            double discountAmount = subtotal * 0.15;
+            out.println("<p><b>Faculty Discount (15%):</b> AED " + discountAmount + "</p>");
         }
-
+        else {
+            out.println("<p><b>Faculty Discount:</b> AED 0.00</p>");
+        }
+        
         out.println("<h3 style='color: #985c45;'>Net Total: AED " + netTotal + "</h3>");
         out.println("<p style='color: #397d1a; text-align: center;'>Reservation made successfully!</p>");
         out.println("<br><a href='booking_form.html' style='color: #985c45;'>Submit Another Request</a>");
